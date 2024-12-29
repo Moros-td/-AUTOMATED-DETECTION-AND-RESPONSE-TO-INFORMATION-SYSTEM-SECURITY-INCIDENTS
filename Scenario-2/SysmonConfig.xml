@@ -1,0 +1,37 @@
+<Sysmon schemaversion="4.82">
+  <HashAlgorithms>*</HashAlgorithms>
+  <EventFiltering>
+
+     <ProcessCreate onmatch="include">
+        <ParentImage condition="end with">WinRAR.exe</ParentImage>
+        <Image condition="end with">cmd.exe</Image>
+     </ProcessCreate>
+
+     <ProcessCreate onmatch="include">
+        <Image condition="end with">WinRAR.exe</Image>
+     </ProcessCreate>
+
+     <ProcessCreate onmatch="include">
+        <ParentImage condition="end with">cmd.exe</ParentImage>
+     </ProcessCreate>
+
+     <ProcessCreate onmatch="include">
+        <Image condition="end with">cmd.exe</Image>
+     </ProcessCreate>
+
+     <ProcessCreate onmatch="include">
+        <ParentImage condition="end with">powershell.exe</ParentImage>
+     </ProcessCreate>
+
+     <ProcessCreate onmatch="include">
+        <Image condition="end with">powershell.exe</Image>
+     </ProcessCreate>
+
+     <FileCreate onmatch="include">
+        <Image condition="end with">WinRAR.exe</Image>
+     </FileCreate>
+
+     <ProcessTerminate onmatch="include" />
+
+  </EventFiltering>
+</Sysmon>

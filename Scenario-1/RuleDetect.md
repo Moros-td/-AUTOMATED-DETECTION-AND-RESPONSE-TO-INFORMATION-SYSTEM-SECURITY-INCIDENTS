@@ -1,0 +1,1 @@
+data_stream.dataset: "modsecurity.auditlog" and modsec.audit.details: *CVE-2021-26084*
